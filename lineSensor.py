@@ -11,11 +11,11 @@ class LineSensor:
 
     def read(self):
         left_sensor, middle_sensor, right_sensor = 0, 0, 0
-        if GPIO.input(self._left) is True:
+        if GPIO.input(self._left) == 1:
             left_sensor = 1
-        if GPIO.input(self._middle) is True:
+        if GPIO.input(self._middle) == 1:
             middle_sensor = 1
-        if GPIO.input(self._right) is True:
+        if GPIO.input(self._right) == 1:
             right_sensor = 1
         values = {"left": left_sensor, "middle": middle_sensor, "right": right_sensor}
         return values
